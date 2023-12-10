@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/uploadvideo" method="POST" id="uploadform" enctype="multipart/form-data"
+        onsubmit="return run()">
+        <input type="file" accept="video/*" id="fileUpload" name="file">
+        <button type="submit" id="btn">submit</button>
+    </form>
+
+    <script>
+        async function run() {
+            let fileInputTag = document.querySelector("#fileUpload");
+            let file = fileInputTag.files[0];
+            if (!file) {
+                alert('請選擇檔案');
+                return false;
+            }
+
+            const allowedTypes = ['video/mp4', 'video/avi', 'video/mov'];
+            if (!allowedTypes.includes(file.type)) {
+                alert('請上傳 mp4、avi、mov 影片檔案');
+                return false;
+            }
+
+            let message = messageTag.value;
+            if (!message) {
+                alert('請輸入內容');
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+</body>
+
+</html>
