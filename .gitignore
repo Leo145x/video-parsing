@@ -4,3 +4,4 @@
 .python-version
 *.json
 .env
+README.MD
