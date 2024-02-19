@@ -12,11 +12,14 @@ from threading import Thread
 app = Flask(
     __name__, static_folder="static", static_url_path="/", template_folder="templates"
 )
+
 CORS(app)
+
 
 @app.route("/")
 def index():
     return render_template("index.html")
+
 
 @app.route("/uploadvideo", methods=["PUT"])
 # @cross_origin(origins=["https://www.leo145x.com"])
@@ -57,7 +60,7 @@ def async_video_porcessing(file_path, filename, client_file_name, id):
 
             file_size = convert_size(os.path.getsize(result_path))
 
-            url = "https://www.leo145x.com/fileAdmin/fileInfoPort"
+            url = "https://leo145x.com/fileAdmin/fileInfoPort"
             info = {
                 "ok": True,
                 "client_file_name": client_file_name,

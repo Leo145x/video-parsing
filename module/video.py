@@ -6,7 +6,6 @@ import cv2
 import csv
 import math
 
-
 def make_video(file_path, out_file_name):
     result = get_video_api(file_path)
     if isinstance(result, str):
